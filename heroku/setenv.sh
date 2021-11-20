@@ -14,5 +14,4 @@ PROJECT_HEROKU_PATH=$PROJECT_PATH/heroku
 
 # Use the following command to create the API key/token and set it
 # heroku authorizations:create
-# HEROKU_API_KEY=<HEROKU_API_KEY>
-HEROKU_API_KEY=53709c00-be33-43e0-9f44-653b96d2852f
+HEROKU_API_KEY=<HEROKU_API_KEY>
