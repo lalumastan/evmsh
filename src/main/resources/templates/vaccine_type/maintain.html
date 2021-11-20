@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{fragments/layout}">
+<body>
+  <div sec:authorize="hasRole('ADMIN')" layout:fragment="content" th:remove="tag">
+    <div class="row justify-content-center">
+	  <form id="vaccineTypeForm" th:action="@{/vaccine_type/edit}" th:object="${vaccineType}" method="post">
+	    <fieldset>
+	      <div class="row col form-header justify-content-center py-0 my-0 alert alert-primary border border-primary">
+	        <h3 th:text="#{maintainVaccineType}"></h3>
+	      </div>
+	      <div class="row col alert alert-primary border border-primary">
+	        <div class="row justify-content-center">
+	          <div class="form-group col-sm-3">
+	            <label class="control-label" for="name" th:text="#{name}"></label>
+	            <input th:if="${vaccineType.name == null}" class="form-control" type="text" th:placeholder="#{name}" required th:field="*{name}" />
+	            <span th:if="${vaccineType.name != null}" th:text="${vaccineType.name}"></span>
+	            <input th:if="${vaccineType.name != null}" type="hidden" th:field="*{name}" />
+	          </div>
+	          <div class="form-group col-sm-9">
+	            <label class="control-label" for="descr" th:text="#{descr}"></label>
+	            <input class="form-control" type="text" th:placeholder="#{descr}" required th:field="*{description}" />
+	          </div>	          
+	        </div>
+	        <div class="row col-sm-12 justify-content-center">
+	          <input id="vaccineTypeSubmit" name="vaccineTypeSubmit" th:value="${vaccineType.name != null} ? #{edit} : #{add}" class="btn btn-primary" type="submit"/> 
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+    </div>  
+  </div>
+</body>
+</html>

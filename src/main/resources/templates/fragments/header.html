@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+  <th:block th:fragment="header">
+	  <header>
+	    <nav class="navbar navbar-expand navbar-dark justify-content-between fixed-top" role="navigation">    
+	      <a class="navbar-brand" href="#"><img th:src="@{/images/logo.png}" alt="EVMS Logo" width="8%" />&nbsp;&nbsp;[[#{evms}]]</a>
+	      <button sec:authorize="isAuthenticated()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	      <div sec:authorize="isAuthenticated()" class="collapse navbar-collapse" id="navbarSupportedContent">
+	        <ul class="navbar-nav ml-auto text-nowrap">
+	          <li class="nav-item"><a class="nav-link" th:href="@{/home}" th:text="#{home}"></a></li>
+	          <li class="dropdown">
+	            <a class="nav-link dropdown-toggle" href="#" role="button" id="adminDropdownMenuLink" data-toggle="dropdown" aria-expanded="false">[[#{admin}]]</a>
+	            <div class="dropdown-menu" aria-labelledby="adminDropdownMenuLink">
+	               <a class="dropdown-item" th:href="@{/vaccine_type}" th:text="#{vaccineType}"></a>              
+	            </div>
+	          </li>
+              <li class="nav-item"><a class="nav-link" th:href="@{/logout}" th:text="#{logout}"></a></li>	          
+	        </ul>
+	      </div>
+	    </nav>
+	  </header>
+  </th:block>
+</body>
+</html>

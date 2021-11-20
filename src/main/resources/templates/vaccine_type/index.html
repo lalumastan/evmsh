@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{fragments/layout}">
+<body>
+  <div layout:fragment="content" th:remove="tag">
+    <div class="row justify-content-center">
+      <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+      <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+    </div>
+    <div class="row justify-content-center">
+	  <table id="vaccineType" class="display" summary="Vaccine Types">
+	     <thead>
+	       <tr>
+	         <th sec:authorize="hasRole('ADMIN')"  id="maintain"><a th:href="@{/vaccine_type/edit/-1}" th:text="#{add}"></a></th>
+	         <th id="name" th:text="#{name}"></th>
+	         <th id="descr" th:text="#{descr}"></th>
+	         <th sec:authorize="hasRole('ADMIN')" id="delete" th:text="#{delete}"></th>
+	       </tr>
+	     </thead>
+	     <tbody>
+	       <tr th:each="v: ${vaccineTypeList}">
+	         <td sec:authorize="hasRole('ADMIN')" headers="maintain"><a th:href="@{/vaccine_type/edit/} + ${v.name}" th:text="#{edit}"></a></td>
+	         <td headers="name" th:text="${v.name}"></td>
+	         <td headers="descr" th:text="${v.description}"></td>
+	         <td sec:authorize="hasRole('ADMIN')" headers="delete"><a  th:href="@{/vaccine_type/delete/} + ${v.name}" th:text="#{delete}"></a></td>
+	       </tr>
+	     </tbody>     
+	  </table>
+	  <script>
+		  $(document).ready(function() {
+			    $('#vaccineType').DataTable();
+			} );  
+	  </script>
+    </div>
+  </div>    
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+	height: 100%;
+	padding-top: 125px;
+}
+
+section {
+	padding-top: 25px;
+}
+
+h1 {
+	color: white;
+}
+
+th, .form-header {
+	color: white;
+	background: darkblue;
+}
+
+.navbar, .dropdown-menu {
+	background-color: darkblue;
+}
+
+.dropdown-item {
+	color: #d5d5d5;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+	color: #dee2e6;
+	text-decoration: bold;
+	background-color: darkblue;
+} 
+
+footer {
+	position: fixed;
+	height: 50px;
+	bottom: 0;
+	width: 100%;
+	background-color: #ccc;
+	padding: 15px;
+}

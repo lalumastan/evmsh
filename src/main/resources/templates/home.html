@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{fragments/layout}">
+<body>
+  <div layout:fragment="content" th:remove="tag">
+     <div class="row justify-content-center">
+       <h3 class="alert alert-primary">[[#{welcome(${currentUser})}]] <span sec:authentication="principal.authorities"></span></h3>
+    </div>
+  </div>    
+</body>
+</html>
