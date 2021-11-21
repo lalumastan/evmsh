@@ -1,5 +1,5 @@
 
-# Deploy SpringBoot Java MySQL Secured Web App on Heroku Tutorial
+# Deploy SpringBoot Java MySQL Secured Web App on Heroku & freesqldatabase Tutorial
 ## Workflow
 
 ![Alt text](wf.png)
@@ -24,4 +24,4 @@ C --> F(Update<br/>Configuration<br/>Information)--> G(Run<br/>Deployment<br/>Sc
 </ul>
 
 ## Tutorial
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=4MzQoN0v8TY" target="_blank"><img src="http://img.youtube.com/vi/4MzQoN0v8TY/0.jpg" alt="Deploy SpringBoot Java MySQL Secured Web App on Heroku Tutorial" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=qBgp3q0Kli0" target="_blank"><img src="http://img.youtube.com/vi/qBgp3q0Kli0/0.jpg" alt="Deploy SpringBoot Java MySQL Secured Web App on Heroku Tutorial" width="240" height="180" border="10" /></a>
